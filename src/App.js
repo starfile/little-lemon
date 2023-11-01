@@ -1,9 +1,14 @@
-{/*import logo from './logo.svg';*/}
+//import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Nav from './components/Nav';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+//    <div className="App">
+    <>
 {/*
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,8 +25,23 @@ function App() {
         </a>
       </header>
 */}
-      Homepage
-    </div>
+{
+//      Homepage
+}
+{/*
+      <header></header>
+      <nav></nav>
+      <main></main>
+      <footer></footer>
+*/}
+      <Header />
+      <Nav />
+      <Main />
+      <Footer />
+{
+//    </div>
+}
+    </>
   );
 }
 
