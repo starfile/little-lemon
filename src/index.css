@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  display: grid;
+  grid-template-columns: repeat(12, 70px);
+  grid-template-rows: 123px 1699px 417px;
+  margin-left: 70px;
+  margin-right: 70px;
+  column-gap: 20px;
+  grid-template-areas: ". . header header nav nav nav nav nav nav . ."
+    ". . main main main main main main main main . ."
+    ". . footer footer footer footer footer footer footer footer . .";
+}
+
+Header {
+  grid-area: header;
+  align-self: center;
+}
+
+Nav { 
+  grid-area: nav; 
+  align-self: center;
+  margin-bottom: 13pt; /* Adjust to baseline of logo text. */
+}
+
+Main { grid-area: main; }
+Footer { grid-area: footer; }
+
+h1 {
+  font-family: "Karla";
+  font-size: 11pt;
+  font-weight: 800;
+}
+
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+p {}
+span {}
+
+nav {}
+
+ul {
+  list-style-type: none;
+}
+
+.nav-ul > li {
+  float: left;
+  font-family: "Karla";
+  font-size: 10pt;
+  margin-right: 28px;
+}
+
+.footer-ul > li {
+  font-family: "Karla";
+  font-size: 10pt;
+}
+
+footer {
+  display: flex;
+}
+
+section {
+  margin-right: 70px;
+}
+
+img {}

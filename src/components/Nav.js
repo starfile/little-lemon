@@ -2,8 +2,8 @@ import React from "react";
 
 function Nav(props) {
   return (
-    <nav className="nav">
-      <ul class="main-nav">
+    <nav>
+      <ul className="nav-ul">
         <li><a href="/home" className="nav-item">Home</a></li>
         <li><a href="/about" className="nav-item">About</a></li>
         <li><a href="/menu" className="nav-item">Menu</a></li>

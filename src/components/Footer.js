@@ -9,7 +9,7 @@ function Footer(props) {
       </section>
       <section>
         <h1>Navigation</h1>
-        <ul class="footer-nav">
+        <ul className="footer-ul">
           <li><a href="/home" className="footer-nav-item">Home</a></li>
           <li><a href="/about" className="footer-navnav-item">About</a></li>
           <li><a href="/menu" className="footer-nav-item">Menu</a></li>
@@ -20,7 +20,7 @@ function Footer(props) {
       </section>
       <section>
         <h1>Contact</h1>
-        <ul>
+        <ul className="footer-ul">
           <li>Address</li>
           <li>Phone number</li>
           <li>Email</li>
@@ -28,10 +28,10 @@ function Footer(props) {
       </section>
       <section>
         <h1>Social Media</h1>
-        <ul>
-        <li>Facebook</li>
-        <li>Instagram</li>
-        <li>Youtube</li>
+        <ul className="footer-ul">
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Youtube</li>
         </ul>
       </section>
     </footer>
