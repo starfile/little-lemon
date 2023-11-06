@@ -15,6 +15,8 @@ function initializeTimes() {
 function updateTimes(state, action) {
 //  return initializeTimes();
   const data = fetchAPI(action);
+  // For debug purpose.
+  //console.log(data);
   return data;
 }
 
