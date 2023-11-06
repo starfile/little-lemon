@@ -34,10 +34,10 @@ function App() {
       <main></main>
       <footer></footer>
 */}
-      <Header />
-      <Nav />
-      <Main />
-      <Footer />
+        <Header />
+        <Nav />
+        <Main />
+        <Footer />
 {
 //    </div>
 }

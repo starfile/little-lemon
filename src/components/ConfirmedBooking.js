@@ -1,9 +1,13 @@
 import React from "react";
+import photo from '../assets/images/confirmed-booking.jpg';
 
 function ConfirmedBooking(props) {
-  
+
   return (
-    <p>Your booking has been confirmed.</p>
+    <>
+      <h1>Your booking has been confirmed.</h1>
+      <img id="confirmed-booking-photo" src={photo} alt="Confirmed booking"></img>
+    </>
   );
 }
 

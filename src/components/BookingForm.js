@@ -3,7 +3,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Button, FormControl, FormLabel, FormErrorMessage, Input, Select } from '@chakra-ui/react'
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  HStack,
+  Input,
+  Select,
+  VStack
+} from '@chakra-ui/react'
 
 function BookingForm(props) {
 /*
@@ -105,61 +114,75 @@ function BookingForm(props) {
 
   return (
     <form onSubmit={ formik.handleSubmit }>
-      <FormControl isInvalid={ formik.errors.resDate }>
-        <FormLabel htmlFor="resDate">Choose date</FormLabel>
-        <Input
-          id="resDate"
-          name="resDate"
-          type="date"
-          {...formik.getFieldProps("resDate")}
-          onChange={(e) => {
-            const chosenDate = new Date(e.target.value);
-            // For debug purpose.
-            //console.log('Chosen date: ' + chosenDate);
-            props.availableTimesDispatch(chosenDate);
-            formik.setFieldValue("resDate", e.target.value)
-          }}
-          required
-        />
-        <FormErrorMessage>{ formik.errors.resDate }</FormErrorMessage>
-      </FormControl>
-      <FormControl isInvalid={ formik.errors.resTime }>
-        <FormLabel htmlFor="resTime">Choose time</FormLabel>
-        <Select
-          id="resTime"
-          name="resTime"
-          {...formik.getFieldProps("resTime")}
-          required
-        >
-          {props.availableTimes ? props.availableTimes.map(availableTime => {return <option key={availableTime}>{availableTime}</option>}) : <option>N/A</option>}
-        </Select>
-        <FormErrorMessage>{ formik.errors.resDate }</FormErrorMessage>
-      </FormControl>
-      <FormControl isInvalid={ formik.errors.guests }>
-        <FormLabel htmlFor="guests">Guests</FormLabel>
-        <Input
-          id="guests"
-          name="guests"
-          type="number"
-          {...formik.getFieldProps("guests")}
-          required
-        />
-        <FormErrorMessage>{ formik.errors.guests }</FormErrorMessage>
-      </FormControl>
-      <FormControl isInvalid={ formik.errors.occasion }>
-        <FormLabel htmlFor="occasion">Occasion</FormLabel>
-        <Select
-          id="occasion"
-          name="occasion"
-          {...formik.getFieldProps("occasion")}
-          required
-        >
-          <option>Birthday</option>
-          <option>Anniversary</option>
-        </Select>
-        <FormErrorMessage>{ formik.errors.resDate }</FormErrorMessage>
-      </FormControl>
-      <Button type="submit" isDisabled={!formik.isValid} aria-label="On Click">Make Your reservation</Button>
+      <HStack>
+        <section></section>
+        <VStack spacing={'2vw'} align='flex-start' alignItems='flex-start' verticalAlign='top'>
+          <FormControl isInvalid={ formik.errors.resDate }>
+            <FormLabel htmlFor="resDate" fontSize="1.2vw">Choose date</FormLabel>
+            <Input
+              id="resDate"
+              name="resDate"
+              type="date"
+              height="3vw"
+              fontSize="1.2vw"
+              {...formik.getFieldProps("resDate")}
+              onChange={(e) => {
+                const chosenDate = new Date(e.target.value);
+                // For debug purpose.
+                //console.log('Chosen date: ' + chosenDate);
+                props.availableTimesDispatch(chosenDate);
+                formik.setFieldValue("resDate", e.target.value)
+              }}
+              required
+            />
+            <FormErrorMessage>{ formik.errors.resDate }</FormErrorMessage>
+          </FormControl>
+          <FormControl isInvalid={ formik.errors.resTime }>
+            <FormLabel htmlFor="resTime" fontSize="1.2vw">Choose time</FormLabel>
+            <Select
+              id="resTime"
+              name="resTime"
+              height="3vw"
+              fontSize="1.2vw"
+              {...formik.getFieldProps("resTime")}
+              required
+            >
+              {props.availableTimes ? props.availableTimes.map(availableTime => {return <option key={availableTime}>{availableTime}</option>}) : <option>N/A</option>}
+            </Select>
+            <FormErrorMessage>{ formik.errors.resDate }</FormErrorMessage>
+          </FormControl>
+          <FormControl isInvalid={ formik.errors.guests }>
+            <FormLabel htmlFor="guests" fontSize="1.2vw">Guests</FormLabel>
+            <Input
+              id="guests"
+              name="guests"
+              type="number"
+              height="3vw"
+              fontSize="1.2vw"
+              {...formik.getFieldProps("guests")}
+              required
+            />
+            <FormErrorMessage>{ formik.errors.guests }</FormErrorMessage>
+          </FormControl>
+          <FormControl isInvalid={ formik.errors.occasion }>
+            <FormLabel htmlFor="occasion" fontSize="1.2vw">Occasion</FormLabel>
+            <Select
+              id="occasion"
+              name="occasion"
+              height="3vw"
+              fontSize="1.2vw"
+              {...formik.getFieldProps("occasion")}
+              required
+            >
+              <option>Birthday</option>
+              <option>Anniversary</option>
+            </Select>
+            <FormErrorMessage>{ formik.errors.resDate }</FormErrorMessage>
+          </FormControl>
+          <Button type="submit" height="4vw" fontSize="1.2vw" marginTop="1vw" isDisabled={!formik.isValid} aria-label="On Click">Make Your reservation</Button>
+        </VStack>
+        <section></section>
+      </HStack>
     </form>
   )
 }
